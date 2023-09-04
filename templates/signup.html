@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up to Farm Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center py-4">
+                    <h2>Sign Up for Farm Dashboard</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/signup" method="post">
+                        
+                        <!-- Full Name -->
+                        <div class="form-group mb-4">
+                            <label for="full_name" class="mb-2 font-weight-bold">Full Name</label>
+                            <input type="text" class="form-control" id="full_name" name="full_name" placeholder="John Doe" required>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="form-group mb-4">
+                            <label for="email" class="mb-2 font-weight-bold">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="johndoe@example.com" required>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="form-group mb-4">
+                            <label for="password" class="mb-2 font-weight-bold">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="form-group mb-4">
+                            <label for="phone_number" class="mb-2 font-weight-bold">Phone Number</label>
+                            <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="123-456-7890">
+                        </div>
+
+                        <!-- Address -->
+                        <div class="form-group mb-4">
+                            <label for="address" class="mb-2 font-weight-bold">Address</label>
+                            <textarea class="form-control" id="address" name="address" rows="2" placeholder="123 Main St, City, Country"></textarea>
+                        </div>
+
+                        <!-- Farm Details -->
+                        <div class="form-group mb-4">
+                            <label for="farm_name" class="mb-2 font-weight-bold">Farm Name</label>
+                            <input type="text" class="form-control" id="farm_name" name="farm_name" placeholder="Green Acres">
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="farm_size" class="mb-2 font-weight-bold">Farm Size (in acres)</label>
+                            <input type="number" class="form-control" id="farm_size" name="farm_size" placeholder="50">
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="farm_location" class="mb-2 font-weight-bold">Farm Location</label>
+                            <textarea class="form-control" id="farm_location" name="farm_location" rows="2" placeholder="123 Farm Rd, City, Country"></textarea>
+                        </div>
+
+                        <!-- Crops and Livestock Details -->
+                        <div class="form-group mb-4">
+                            <label for="crops_grown" class="mb-2 font-weight-bold">Crops Grown</label>
+                            <textarea class="form-control" id="crops_grown" name="crops_grown" rows="2" placeholder="Wheat, Rice, etc."></textarea>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="livestock_details" class="mb-2 font-weight-bold">Livestock Details</label>
+                            <textarea class="form-control" id="livestock_details" name="livestock_details" rows="2" placeholder="Cows, Chickens, etc."></textarea>
+                        </div>
+
+                        <!-- Submit button -->
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-lg btn-block mt-4" value="Sign Up">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

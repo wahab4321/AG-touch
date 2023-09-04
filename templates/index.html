@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Farm Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="farmMngDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Farm Management
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="farmMngDropdown">
+                        <a class="dropdown-item" href="#">Crop Data</a>
+                        <a class="dropdown-item" href="#">Task Data</a>
+                        <a class="dropdown-item" href="#">Season Data</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="inventoryDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Inventory Management
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="inventoryDropdown">
+                        <a class="dropdown-item" href="#">Seeds</a>
+                        <a class="dropdown-item" href="#">Fertilizers</a>
+                        <a class="dropdown-item" href="#">Equipment</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="weatherDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Weather Monitoring
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="weatherDropdown">
+                        <a class="dropdown-item" href="{{ url_for('daily_forecast') }}">Daily Forecasts</a>
+                        <a class="dropdown-item" href="#">Suggestions</a>
+                    </div>
+                </li>
+                <!-- Authentication Items -->
+            <li class="nav-item">
+                <a class="nav-link" href="/signin">Sign In</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signup">Sign Up</a>
+            </li>             
+        </ul>
+    </div>
+</nav>
+    
+    <!-- Sign In Modal -->
+    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Sign In Form Content Here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Sign Up Form Content Here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <body>
+
+
+        <section class="hero" style="background-image: url('{{ url_for('static', filename='agr.jpg') }}'); height: 500px; background-size: cover; color: white; text-align: center; padding: 100px 0 10px 0;">
+            <h1>How is Modern Technology Revolutionizing Traditional Farming?</h1>
+        </section>
+        
+        <!-- Research Questions & Answers -->
+        <section class="container mt-2"> <!-- Reduced margin-top to 2 (mt-2) -->
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>What role does IoT play in today's agriculture?</h3>
+                    <p>IoT devices, from soil sensors to drones, provide real-time data to farmers. This data-driven approach allows for precise irrigation, optimized fertilization, and efficient pest control, ensuring higher yields and sustainable farming.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>How is AI transforming the agriculture sector?</h3>
+                    <p>Artificial Intelligence aids in predicting crop yields, detecting potential diseases or pests, and automating tasks. Machine learning models can analyze vast amounts of data to provide actionable insights, making farming more efficient and productive.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Why is sustainable farming crucial for the future?</h3>
+                    <p>Sustainable farming practices ensure that the land remains fertile and productive for future generations. It reduces the environmental impact, conserves resources, and promotes biodiversity, ensuring a balance in the ecosystem.</p>
+                </div>
+            </div>
+        </section>
+        
+    
+        <!-- Interactive Section -->
+        <section class="carousel mt-5">
+            <!-- You can use a Bootstrap carousel here to showcase various farming technologies with brief explanations. -->
+        </section>
+    
+        <!-- Call to Action -->
+        <section class="cta mt-5 text-center">
+            <h2>Join us in our journey to make farming smarter and more efficient with AG Touch!</h2>
+            <a href="/signup" class="btn btn-primary mt-3">Join Now</a>
+        </section>
+    
+        <!-- Footer -->
+        <!-- ... (Your existing footer code) ... -->
+    
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    </body>
+    </html>
+
+    
+
+</html>

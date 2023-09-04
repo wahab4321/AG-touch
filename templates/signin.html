@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In to Farm Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6"> <!-- Reduced size for sign in form -->
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center py-4">
+                    <h2>Sign In to Farm Dashboard</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/signin" method="post"> <!-- Make sure the action points to your sign in route -->
+
+                        <!-- Email -->
+                        <div class="form-group mb-4">
+                            <label for="email" class="mb-2 font-weight-bold">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="johndoe@example.com" required>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="form-group mb-4">
+                            <label for="password" class="mb-2 font-weight-bold">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+
+                        <!-- Submit button -->
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-lg btn-block mt-4" value="Sign In">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- Sign In Modal -->
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/signin" method="post">
+              <input type="email" class="form-control" name="email" placeholder="Email" required>
+              <input type="password" class="form-control" name="password" placeholder="Password" required>
+              <button type="submit" class="btn btn-primary mt-2">Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/signup" method="post">
+              <input type="text" class="form-control" name="fullname" placeholder="Full Name" required>
+              <input type="email" class="form-control" name="email" placeholder="Email" required>
+              <input type="password" class="form-control" name="password" placeholder="Password" required>
+              <button type="submit" class="btn btn-primary mt-2">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
